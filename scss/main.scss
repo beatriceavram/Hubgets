@@ -1,0 +1,475 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+@mixin mobile {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 90vw;
+  margin: 0 auto;
+  @include desktop {
+    max-width: 80vw;
+  }
+}
+
+// nav and header styling
+
+nav {
+  height: 4em;
+  display: flex;
+  align-items: center;
+  @include desktop {
+    height: 6em;
+  }
+
+  img {
+    max-width: 100px;
+    @include desktop {
+      max-width: 153px;
+    }
+
+  &.container {
+    margin: 15px auto;
+    @include desktop {
+      margin: 40px auto;
+    }
+  }
+}
+}
+
+header {
+  height: 22em;
+  background-color: #0EA5DC;
+  display: flex;
+
+  @include desktop {
+    height: 20em;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    h1 {
+      font-size: 1.56em;
+      margin-top: 0;
+      margin-bottom: 10px;
+
+      @include desktop {
+        font-size: 2.18em;
+      }
+    }
+    p {
+      font-size: 0.7em;
+      margin-bottom: 10px;
+      opacity: 80%;
+      align-self: center;
+
+      @include desktop {
+        font-size: 1em;
+      }
+    }
+  }
+  //@include mobile {
+  //  height: 15em;
+  //}
+}
+
+// Form Styling
+
+section {
+
+  background-color: #F7F7F7;
+  display: flex;
+  @include desktop {
+    height: 40em;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    //width: 75%;
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+    }
+
+
+
+  .col-6:nth-of-type(1) {
+    //width: 80%;
+    height: 50%;
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 0 3px #888888;
+    color: grey;
+    font-size: 12px;
+    padding: 50px;
+    position: relative;
+
+    @include desktop {
+      width: 50%;
+      font-size: 14px;
+    }
+
+    &:before {
+      width: 100px;
+      height: 100px;
+      content: " ";
+      position: absolute;
+      background-image: url("../images/address-card-regular.png");
+      background-size: 60px 50px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 0 5px #888888;
+      top: -50px;
+      left: 50%;
+      margin-left: -35px;
+    }
+
+    input {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      height: 30px;
+      border: 1px solid #E0E0E0;
+      padding: 10px;
+
+      @include desktop {
+        width: 100%;
+      }
+
+      &:focus {
+        outline: none !important;
+        border: 1px solid #E0E0E0;
+      }
+    }
+
+    .row:first-of-type {
+      margin-top: 70px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      @include desktop {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+      .col-12 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 10px;
+        }
+
+    }
+
+    .row:nth-of-type(2) {
+      input {
+        width: 100%;
+      }
+    }
+
+
+    .row:nth-of-type(3) {
+      input {
+        width: 100%;
+      }
+    }
+
+    .row:nth-child(4) button {
+      background-color: #0EA5DC;
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+      border-radius: 5px;
+      width: 85px;
+      height: 30px;
+      border: 1px solid #0EA5DC;
+      position: relative;
+
+      @include desktop {
+        width: 130px;
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+  }
+  .col-6:nth-of-type(2) {
+    width: 100%;
+    height: 50%;
+    padding: 40px;
+    margin-top: 70px;
+    border: 2px solid #0EA5DC;
+    border-radius: 5px;
+    margin-bottom: 50px;
+
+    @include desktop {
+      border: 0;
+      width: 50%;
+    }
+
+    aside {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      color: black;
+
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+      img{
+        width: 50px;
+        height: 50px;
+        border: 2px solid #0EA5DC;
+        border-radius: 5px;
+        margin-right: 20px;
+      }
+      p {
+        font-size: 12px;
+
+        @include desktop {
+          font-size: 14px;
+        }
+      }
+    }
+    }
+    .special {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      img {
+        width: 75px;
+        height: 75px;
+        margin-right: 20px;
+      }
+      div.text {
+
+        p {
+          margin-bottom: 10px;
+        }
+        a {
+          color:#0EA5DC;
+          text-decoration: none;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+.c-error .c-validation {
+    width: 145px;
+    background-color: #ED7274 !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    position: absolute;
+    color: white;
+    height: auto;
+    transition: .7s;
+    font-size: 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    bottom: 46px;
+}
+
+
+  .c-error .c-validation:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ED7274;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+  }
+
+  .c-error .c-validation:after {
+    content: ' ';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-image: url("../images/exclamation-circle-solid.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 20px 20px;
+    top: -35px;
+    right: 10px;
+    @include desktop {
+      top: -45px;
+    }
+  }
+
+  .c-error input[type="email"] {
+    background-color: #ffb2b2 !important;
+    border: 1px solid #c51244 !important;
+    color: #9D2B2B;
+  }
+  .err-label {
+    color: #9D2B2B;
+  }
+
+  // Footer Styling
+
+  $gridCols: 12;
+  $gridWidth: 100%;
+  $gutter: 0;
+
+  .grid-container {
+
+    max-width: $gridWidth;
+    margin: 0 auto;
+
+    @mixin clearfix {
+      &::after, &::before {
+        content: " ";
+        display: table;
+        clear: both;
+      }
+    }
+
+    .row {
+      @include clearfix;
+      width: 100%;
+
+      [class*='col-'] {
+        padding: $gutter;
+        float: left;
+        min-height: 50px;
+        width: (100% / $gridCols);
+        height: 100%;
+      }
+
+      @for $i from 1 through $gridCols {
+        .col-#{$i} {
+          width: (100% / $gridCols) * $i;
+        }
+      }
+    }
+  }
+
+    footer {
+
+      height: 24em;
+      font-size: 12px;
+      background-color: #0982AD;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include desktop {
+        font-size: 16px;
+        height: 20em;
+      }
+
+      .container {
+        height: 100%;
+      }
+
+      .row {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+
+        @include desktop {
+        margin-top: 25px;
+        }
+      }
+    }
+
+
+  #sec1 {
+    width: 30%;
+    height: 100%;
+    display: flex;
+
+    a {
+      background-image: url("../images/bubbles-white.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 50px 30px;
+      width: 120px;
+      height: 50px;
+      opacity: .6;
+      &:hover {
+        opacity: 100%;
+      }
+      @include desktop {
+        display: block;
+        background-image: url("../images/logo footer.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 120px 30px;
+      }
+    }
+
+  }
+
+  #sec2 {
+    width: 35%;
+    line-height: 25px;
+
+    li {
+      list-style: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      opacity: .6;
+      cursor: pointer;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      &:hover {
+        opacity: 100%;
+      }
+    }
+  }
+
+  #sec3 {
+    font-size: 12px;
+    opacity: .6;
+  }
+
